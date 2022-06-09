@@ -1,3 +1,8 @@
+//tranverse and insertion in array 
+// abstract data type
+
+
+
 #include<stdio.h>
 
 void display(int arr[], int n)
