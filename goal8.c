@@ -16,6 +16,14 @@ void linkedlisttraversal(struct node *ptr)
     }
 }
 
+struct node * insertatfirst(struct node *head, int data)
+{
+    struct node * ptr = (struct node *) malloc (sizeof(struct node));
+    ptr-> next = head ;
+    ptr->data = data ;
+    return ptr;
+}
+
 int main()
 {
     struct node *head;
@@ -45,6 +53,9 @@ int main()
     fourth->data = 7777;
     fourth->next = NULL;
 
+    linkedlisttraversal(head);
+
+    head = insertatfirst(head, 69);
     linkedlisttraversal(head);
     return 0;
 }
