@@ -1,3 +1,7 @@
+//abstract data type
+
+
+
 #include<stdio.h>
 #include<stdlib.h>
  
