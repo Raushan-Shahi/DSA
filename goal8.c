@@ -1,4 +1,4 @@
-// linked list insertion at index
+// linked list insertion at begin
 
 
 #include <stdio.h>
