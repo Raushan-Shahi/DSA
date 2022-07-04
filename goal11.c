@@ -1,4 +1,5 @@
-//linked list insertion at end 
+// linked list insertion at node 
+
 
 
 #include <stdio.h>
@@ -19,17 +20,12 @@ void linkedlisttraversal(struct node *ptr)
     }
 }
 
-struct node *insertatend(struct node *head, int data)
+struct node *insertatnode(struct node *head, struct node* prevnode, int data)
 {
     struct node *ptr = (struct node *)malloc(sizeof(struct node));
     ptr->data = data;
-    struct node *p = head;
-    while (p->next != NULL)
-    {
-        p = p->next;
-    }
-    p->next = ptr;
-    ptr->next = NULL;
+    ptr->next = prevnode->next;
+    prevnode->next = ptr;
     return head;
 }
 
@@ -63,7 +59,7 @@ int main()
     fourth->next = NULL;
 
     linkedlisttraversal(head);
-    head = insertatend(head, 69);
+    head = insertatnode(head,second, 69);
     printf("linked list after insert at end: \n");
     linkedlisttraversal(head);
     return 0;
