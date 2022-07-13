@@ -1,4 +1,4 @@
-// linked list deletion at end
+// linked list deletion a particular data from the linked list
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -18,17 +18,20 @@ void linkedlisttraversal(struct node *ptr)
     }
 }
 
-struct node *deleteatend(struct node *head)
+struct node *deleteaparticulardata(struct node *head, int value)
 {
     struct node *p = head;
     struct node *q = head->next;
-    while(q->next !=NULL)
+    while (q->data = value && q->next != NULL)
     {
         p = p->next;
-        q=q->next;
+        q = q->next;
     }
-    p->next = NULL;
-    free(q);
+    if (q->data == value)
+    {
+        p->next=q->next;
+        free(q);
+    }
     return head;
 }
 
@@ -62,8 +65,8 @@ int main()
     fourth->next = NULL;
 
     linkedlisttraversal(head);
-    head = deleteatend(head);
-    printf("linked list after deleting at an index: \n");
+    head = deleteaparticulardata(head, 77);
+    printf("linked list after deleting a particular data : \n");
     linkedlisttraversal(head);
     return 0;
 }
