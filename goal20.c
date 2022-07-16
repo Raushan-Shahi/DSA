@@ -54,6 +54,7 @@ int main()
     fourth->next = NULL;
 
     linkedlisttraversal(head);
-    printf("%d", second->prev);
+    printf("element previous to 2nd element is: %d\n", second->prev->data);
+    printf("element after second element is: %d", second->next->data);
     return 0;
 }
