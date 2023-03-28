@@ -100,16 +100,16 @@ int paranthesismatch(char *exp)
 
 int main()
 {
-    char *exp = "8*(9+4)-()()()(6789+76)";
+    char *exp = "{}{{{";
 
     // Check if stack is empty
     if (paranthesismatch(exp))
     {
-        printf("The paranthesis is matching");
+        printf("True");
     }
     else
     {
-        printf("The paranthesis is not matching.");
+        printf("False");
     }
     return 0;
 }
